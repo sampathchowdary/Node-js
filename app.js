@@ -1,23 +1,13 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const mysql_connector = require('mysql');
-const connection = mysql_connector.createConnection({
-  host : '127.0.0.1',
-  user : 'root',
-  password  :'password',
-  database : 'dummy'
-});
-
-app.get('/allUsers', (req, res) => {
-  connection.connect();
-  connection.query("select * from users", function(error, results){
-    console.log("query response is ", results, error);
-    res.json(results);
-  })
-  connection.end();
-})
+const express = require('express');
+const port = 3000;
+const app = express();
+const Routers = require('./routes/routes')
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`listening at http://localhost:${port}`)
 })
+
+app.use(express.urlencoded({extended: false}));
+
+
+app.use("/", Routers)
