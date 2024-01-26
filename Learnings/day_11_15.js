@@ -32,6 +32,7 @@ console.log(numOne, numThree,rest)
 // spread operator to copy
 const tech = {...frontEnd, ...backEnd} // target, source => updated with source elements 
 console.log(tech)
+console.log([...frontEnd, ...backEnd])
 
 
 

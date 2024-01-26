@@ -30,10 +30,10 @@ console.log(' ======= Hooks ========')
         2. useEffect  : allows to perform side effects (componentDidMount(), componentDidUpdate())
         3. useContext : createContext, useContext()
         4. useRef : used to access dom elemtent directly, store val, update val but not rerender
-        5. useReducer
-        6. useCallback
-        7. useMemo
-        8. Custom Hooks
+        5. useReducer  : similar to useState Hook
+        6. useCallback  : returns a memoized function (similar to usememo just it will return function)
+        7. useMemo  : returns memoized value
+        8. Custom Hooks  : same like function to use everywhere, use + funcName (it runs the func and return)
 
 
         useEffect(<function>, <dependency>)
@@ -43,6 +43,10 @@ console.log(' ======= Hooks ========')
 
         useContext: we can add value to provider and 
         UserContext.Provider store the value, useContext to get the value => example below
+
+        useReducer(<reducer>, <initialState>)
+        data from reducer, custom state logic
+
 */
 
 console.log(' ======= REACT rules to follow react hooks ========')
@@ -119,4 +123,28 @@ console.log('============ useContext / context api ========== prop drilling  ===
                 </UserContext.Provider>
             3.   const user = useContext(UserContext);
                 <Component8 />
+*/
+
+
+console.log(' ======= Custom Hook ========')
+/*
+
+useFetch.js
+
+  import { useState, useEffect } from "react";
+
+  const useFetch = (url) => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setData(data));
+    }, [url]);
+
+    return [data];
+  };
+
+  export default useFetch;
+
 */

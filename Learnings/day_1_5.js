@@ -193,3 +193,25 @@ console.log(numbers.splice(0,1,9)) // it will update 1st element at 0th place to
 console.log("splice", numbers)
 console.log("==============-End-==============")
 console.log("\n")
+
+
+
+
+
+console.log("==============-SCSS-==============")
+
+// SCSS -> Sassy CSS -> compiled to css ( manual conversion or gulp -> automatic convertion scss to css )
+
+// Gulp : command line task runner in node.js (javascript)
+/*
+    
+    uses:
+    1. Variables   (using $ sign)
+    2. Nesting
+    3. you can import variable from files (partials)
+    4. Mixins (reusable declarations)
+    5. it allows functions
+
+    @include derivative for mixins
+    @exclude derivative for selectors
+*/

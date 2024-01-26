@@ -55,6 +55,8 @@ console.log(" Day 18 ")
     // Promises can be used to replace callbacks in many scenarios, providing a more elegant and maintainable solution.
     // A promise can be settled (resolved or rejected) with a value, and the then() and catch() methods can be used to handle the success or failure of the asynchronous operation.
 
+    promise.all() => all promises has to pass
+    
     Fetch API
     Interface to fetch resources, fetch method to request url, API
 

@@ -13,7 +13,10 @@ router.get('/', (req, res) => {
 })
 
 // router.use('/products', products);
+// products controller
 router.get('/products', prodController.getProducts);
+
+
 
 
 module.exports = router;

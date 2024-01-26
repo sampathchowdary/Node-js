@@ -286,6 +286,6 @@ console.log(" Day 10")
 const numbes = [5, 3, 2, 5, 5, 9, 4, 5]
 const setOfNumbers = new Set(numbes)
 
-console.log(setOfNumbes)
+console.log(setOfNumbers)
 
 console.log("==============-End-==============")

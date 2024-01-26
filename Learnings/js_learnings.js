@@ -242,4 +242,25 @@ console.log('=====  Currying in JS =====')
 
 */
 
+console.log('=====  Functional Programming and Pure functions  =====')
+
+/*
+    Functional Programming: functions are treated as first-class citizens, meaning they can be assigned to variables, 
+        passed as arguments to other functions, and returned as values from other functions.
+
+    Pure Functions: A pure function is where the output value is determined only by its input parameters, without observable side effects.
+    
+
+    Example :
+    # Functional programming example using map
+        numbers = [1, 2, 3, 4, 5]
+
+    # Pure function to square a number
+        def square(x):
+            return x ** 2
+
+    # Using map to apply the pure function to each element in the list
+        squared_numbers = list(map(square, numbers))
+
+*/
 
