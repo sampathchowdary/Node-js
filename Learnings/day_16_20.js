@@ -46,7 +46,7 @@ console.log(" Day 18 ")
 /*
 
     // Promise : A way to handle asynchronous operations in js => return with success or failure
-    // pending : initial state, neither fulfilled nor rejected
+    // pending : initial state, neither fulfilled nor rejected 
     // fullfilled : completed successfully
     // rejected : operation failed with a reason(error)
     => once any operation is done it will call the attached handler to execute the code

@@ -1,0 +1,173 @@
+        int res = Integer.MAX_VALUE;
+        int left = 0, sum = 0;
+        for(int i=0;i<nums.length;i++){
+            sum =sum + nums[i];
+            while(sum>=target){
+                res = Math.min(res, i+1-left);
+                sum=sum-nums[left++];
+            }
+        }
+        return (res !=Integer.MAX_VALUE) ? res : 0;
+
+        =====================================
+
+        import java.util.*;
+
+public class OrderSorter {
+    public static List<String> sortOrders(List<String> orders) {
+        // Separate Prime and non-Prime orders
+        List<String> prime = new ArrayList<>();
+        List<String> nonPrime = new ArrayList<>();
+        for (String order : orders) {
+            if (order.contains(" ")) {
+                prime.add(order);
+            } else {
+                nonPrime.add(order);
+            }
+        }
+
+        // Sort Prime orders
+        Collections.sort(prime, (a, b) -> {
+            String[] aMetadata = a.split(" ");
+            String[] bMetadata = b.split(" ");
+            String aId = aMetadata[0];
+            String bId = bMetadata[0];
+
+            // Compare metadata lexographically
+            int metaCompare = String.join(" ", Arrays.copyOfRange(aMetadata, 1, aMetadata.length))
+                    .compareTo(String.join(" ", Arrays.copyOfRange(bMetadata, 1, bMetadata.length)));
+
+            // Use ID as backup sort
+            return metaCompare == 0 ? aId.compareTo(bId) : metaCompare;
+        });
+
+        // Combine sorted Prime orders with non-Prime orders
+        List<String> result = new ArrayList<>();
+        result.addAll(prime);
+        result.addAll(nonPrime);
+        return result;
+    }
+
+    public static void main(String[] args) {
+        List<String> orders = Arrays.asList(
+            "123",
+            "456 Prime 1 2 3",
+            "789 Prime 3 2 1",
+            "1011",
+            "1213 Prime 1 2 3",
+            "1415"
+        );
+
+        List<String> sortedOrders = sortOrders(orders);
+        System.out.println(sortedOrders);
+    }
+}-----------------
+
+function sortOrders(orders) {
+    // Separate Prime and non-Prime orders
+    const prime = orders.filter(order => order.includes(' '));
+    const nonPrime = orders.filter(order => !order.includes(' '));
+
+    // Sort Prime orders
+    prime.sort((a, b) => {
+        const aMetadata = a.split(' ');
+        const bMetadata = b.split(' ');
+        const aId = aMetadata[0];
+        const bId = bMetadata[0];
+
+        // Compare metadata lexographically
+        const metaCompare = aMetadata.slice(1).join(' ').localeCompare(bMetadata.slice(1).join(' '));
+
+        // Use ID as backup sort
+        return metaCompare === 0 ? aId.localeCompare(bId) : metaCompare;
+    });
+
+    // Combine sorted Prime orders with non-Prime orders
+    return [...prime, ...nonPrime];
+}
+
+// Example usage
+const orders = [
+    "123",
+    "456 Prime 1 2 3",
+    "789 Prime 3 2 1",
+    "1011",
+    "1213 Prime 1 2 3",
+    "1415"
+];
+
+const sortedOrders = sortOrders(orders);
+console.log(sortedOrders);
+-----------------------
+import java.util.*;
+
+public class Solution {
+    public List<int[]> optimizeMemoryUsage(int[] foregroundTasks, int[] backgroundTasks, int K) {
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> b[2] - a[2]);
+        List<int[]> result = new ArrayList<>();
+
+        // Add foreground tasks to priority queue
+        for (int i = 0; i < foregroundTasks.length; i++) {
+            int mem = foregroundTasks[i];
+            if (mem <= K) {
+                pq.offer(new int[] {i, -1, mem});
+            }
+        }
+
+        // Add background tasks to priority queue
+        for (int i = 0; i < backgroundTasks.length; i++) {
+            int mem = backgroundTasks[i];
+            int foregroundMem = K - mem;
+            if (foregroundMem >= 0) {
+                pq.offer(new int[] {-1, i, foregroundMem});
+            }
+        }
+
+        int maxMem = 0;
+        while (!pq.isEmpty()) {
+            int[] arr = pq.poll();
+            int foregroundId = arr[0];
+            int backgroundId = arr[1];
+            int mem = arr[2];
+
+            // Calculate combined memory
+            int combinedMem = (backgroundId == -1) ? mem : mem + backgroundTasks[backgroundId];
+
+            if (combinedMem > maxMem) {
+                maxMem = combinedMem;
+                result.clear();
+            }
+            if (combinedMem == maxMem) {
+                result.add(new int[] {foregroundId, backgroundId});
+            }
+        }
+
+        return result;
+    }
+}
+=============================
+
+public class Main {
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }
+
+    public static int gcdN(int[] numbers) {
+        int result = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            result = gcd(result, numbers[i]);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {12, 18, 24, 30};
+        System.out.println(gcdN(numbers));  // Output: 6
+    }
+}
+
+============================

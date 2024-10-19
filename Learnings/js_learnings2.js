@@ -13,3 +13,15 @@
 
     => In javascript it looks like we passed by value but for objects it reflects change in original object (pass by reference way)
 */
+
+
+
+
+/*
+    Ways to avoid callback hell
+    1. splitting code 
+    2. async/await 
+    3. promise mechanisms
+    4. using generators
+
+*/
