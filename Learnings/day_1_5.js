@@ -215,3 +215,45 @@ console.log("==============-SCSS-==============")
     @include derivative for mixins
     @exclude derivative for selectors
 */
+
+console.log("==============- INDEXED - DB -==============")
+
+// db built into browser, more powerful & bigger that localstorage -- only client side
+// indexeddb is a client-side database, it is a key-value store
+
+// it is more used in building offline apps, combined with serviceworkers, async/await is also possible
+
+/*
+
+
+Connection:
+let openRequest = indexedDB.open(name, version);  => data base name & version (default 1)
+returns => success, error, upgraded needed
+
+where thing will be stored as object store (key - value pairs)
+everything works as transctions (add, delete, ...)
+similar to map - but here work as transctions, you can delete it too.
+
+mainly you need to take care of versions 
+
+
+
+*/
+
+
+console.log("==============- Local Storage/ session storage -==============")
+// both store objects as key-value pairs - 5mb (depends on browser) - only client side
+
+// work like a map -  (setItem/getItem/removeItem) - key(index)
+
+// local storage - remains after broswer close/open, session storage does not 
+
+
+console.log("==============- Cookies, document.cookie -==============")
+// set as string, once it set - it will be sent in all requests - 4kb 
+
+// document.cookie - only way to access cookie (name/value must be encodeed) 
+// setcookie(name, value, expires, path, domain, secure) 
+  // => only under that path, domain - restricted to that domain (this will stop from sending requests to sub domains), secure - only https 
+
+// same site : stops to send other sites from the same site (to prevent XSRF attacks) (xsrf - cross site request forgery)

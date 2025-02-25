@@ -60,6 +60,9 @@ console.log(" Day 18 ")
     Fetch API
     Interface to fetch resources, fetch method to request url, API
 
+    async and await are built on top of promise
+    con in using async await - we can only call await under async functions (some cases we don't need to convert the whole function to async)
+
     async : infront of function will return a promise
     await : to access data from promise we use await
 
@@ -120,3 +123,4 @@ console.log(" Day 20 ")
 
 
 console.log("==============-End-==============")
+

@@ -83,7 +83,13 @@ console.log(' ======= REACT router ========')
 
 /*
     NPM - package
-    BrowserRouter, Routes, Route
+    BrowserRouter, Routes, Route, Swith, Link
+    BroswerRouter : wraps entire application for routing
+    Routes : wraps routes
+    Route : maps to a specific path url or component
+    Switch : renders the first matching route
+    Link : client side routing - navigate between pages
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -108,6 +114,8 @@ console.log(' ======= REACT router ========')
 
       </Switch>
     </BrowserRouter>
+
+
 
 */
 
