@@ -205,7 +205,7 @@ const countriesHaveFiveLetters = names.filter(
   )
   console.log('filter example', countriesHaveFiveLetters)
 
-// reduce : read above about reducer
+// reduce : read above about reduce
 
 const array1 = [1, 2, 3, 4];
 

@@ -39,7 +39,7 @@
     function expression = full executable functions assigned to a variable / property
 
 
-10. How does the setTimeout function work?
+10. How does the setTimeout function work? 
     settimeout function will run once it meet the required time, it works only once after the required time
 
 */
